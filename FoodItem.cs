@@ -27,8 +27,7 @@ namespace S10268816_PRG2Assignment
 
         public override string ToString()
         {
-            return $"{ItemName} - ${ItemPrice:F2}";
+            return $"{ItemName:Name} - ${ItemPrice:F2}";
         }
     }
 }
-
