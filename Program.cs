@@ -9,9 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using S10275174_PRG2Assignment;
 
-namespace S10275174_PRG2Assignment
-{
-    class Program
+class Program
     {
         static List<Restaurant> restaurants = new List<Restaurant>();
         static List<Customer> customers = new List<Customer>();
@@ -176,4 +174,3 @@ namespace S10275174_PRG2Assignment
             Console.WriteLine();
         }
     }
-}
