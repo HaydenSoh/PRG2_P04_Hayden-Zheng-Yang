@@ -37,31 +37,43 @@ class Program
             Console.Write("Enter your choice: ");
             string choice = Console.ReadLine();
 
-            switch (choice)
+            if (choice == "0")
             {
-                case "1":
-                    ListRestaurantsAndMenus();
-                    break;
-                case "2":
-                    ListAllOrders();
-                    break;
-                case "3":
-                    CreateNewOrder();
-                    break;
-                case "4":
-                    ProcessOrder();
-                    break;
-                case "5":
-                    ModifyExistingOrder();
-                    break;
-                case "6":
-                    DeleteExistingOrder();
-                    break;
-                case "0":
-                    return;
-                default:
-                    Console.WriteLine("Invalid choice.");
-                    break;
+                break;
+            }
+            else if (choice == "1")
+            {
+                ListRestaurantsAndMenus();
+                break;
+            }
+            else if (choice == "2")
+            {
+                ListAllOrders();
+                break;
+            }
+            else if (choice == "3")
+            {
+                CreateNewOrder();
+                break;
+            }
+            else if (choice == "4")
+            {
+                ProcessOrder();
+                break;
+            }
+            else if (choice == "5")
+            {
+                ModifyExistingOrder();
+                break;
+            }
+            else if (choice == "6")
+            {
+                DeleteExistingOrder();
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice.");
             }
         }
     }
@@ -202,7 +214,16 @@ class Program
         Console.WriteLine("Create New Order");
         Console.WriteLine("================");
         Console.WriteLine("Enter Customer Email: ");
-        
+        string Email = Console.ReadLine();
+        Console.WriteLine("Enter Restaurant ID: ");
+        string ID = Console.ReadLine();
+        Console.WriteLine("Enter Delivery Date(dd/ mm / yyyy): ");
+
+        Console.WriteLine("Enter Delivery Time(hh: mm): ");
+
+        Console.WriteLine("Enter Delivery Address: ");
+        string Address = Console.ReadLine();
+
     }
     // ==============================================
     // Basic Feature 6
@@ -220,3 +241,4 @@ class Program
     // ==============================================
 
 }
+
