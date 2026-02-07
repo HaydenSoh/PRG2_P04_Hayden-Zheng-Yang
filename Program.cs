@@ -14,82 +14,86 @@ class Program
 
 
     // ==============================================
-    // Start Of Program
-    // By Zheng Yang
-    // ==============================================
-    static void Main(string[] args)
+// Start Of Program
+// By Zheng Yang, Hayden Soh
+// ==============================================
+static void Main(string[] args)
+{
+    LoadRestaurants();
+    LoadFoodItems();
+    LoadCustomers();
+    LoadOrders();
+
+    Console.WriteLine("Welcome to the Gruberoo Food Delivery System");
+    Console.WriteLine($"{restaurants.Count} restaurants loaded!");
+    Console.WriteLine($"{restaurants.Sum(r => r.FoodItems.Count)} food items loaded!");
+    Console.WriteLine($"{customers.Count} customers loaded!");
+    Console.WriteLine($"{orders.Count} orders loaded!");
+    Console.WriteLine();
+
+    while (true)
     {
-        LoadRestaurants();
-        LoadFoodItems();
-        LoadCustomers();
-        LoadOrders();
+        DisplayMenu();
+        Console.Write("Enter your choice: ");
+        string choice = Console.ReadLine();
 
-        Console.WriteLine("Welcome to the Gruberoo Food Delivery System");
-        Console.WriteLine($"{restaurants.Count} restaurants loaded!");
-        Console.WriteLine($"{restaurants.Sum(r => r.FoodItems.Count)} food items loaded!");
-        Console.WriteLine($"{customers.Count} customers loaded!");
-        Console.WriteLine($"{orders.Count} orders loaded!");
-        Console.WriteLine();
-
-        while (true)
+        if (choice == "0")
         {
-            DisplayMenu();
-            Console.Write("Enter your choice: ");
-            string choice = Console.ReadLine();
-
-            if (choice == "0")
-            {
-                break;
-            }
-            else if (choice == "1")
-            {
-                ListRestaurantsAndMenus();
-                break;
-            }
-            else if (choice == "2")
-            {
-                ListAllOrders();
-                break;
-            }
-            else if (choice == "3")
-            {
-                CreateNewOrder();
-                break;
-            }
-            else if (choice == "4")
-            {
-                ProcessOrder();
-                break;
-            }
-            else if (choice == "5")
-            {
-                ModifyExistingOrder();
-                break;
-            }
-            else if (choice == "6")
-            {
-                DeleteExistingOrder();
-                break;
-            }
-            else
-            {
-                Console.WriteLine("Invalid choice.");
-            }
+            break;
+        }
+        else if (choice == "1")
+        {
+            ListRestaurantsAndMenus();
+            break;
+        }
+        else if (choice == "2")
+        {
+            ListAllOrders();
+            break;
+        }
+        else if (choice == "3")
+        {
+            CreateNewOrder();
+            break;
+        }
+        else if (choice == "4")
+        {
+            ProcessOrder();
+            break;
+        }
+        else if (choice == "5")
+        {
+            ModifyExistingOrder();
+            break;
+        }
+        else if (choice == "6")
+        {
+            DeleteExistingOrder();
+            break;
+        }
+        else
+        {
+            Console.WriteLine("Invalid choice.");
         }
     }
+}
 
 
-    // ==============================================
-    // Main Menu
-    // By Zheng Yang
-    // ==============================================
-    static void DisplayMenu()
-    {
-        Console.WriteLine("==== Gruberoo Food Delivery System ====");
-        Console.WriteLine("1. List all restaurants and menu items");
-        Console.WriteLine("2. List all orders");
-        Console.WriteLine("0. Exit");
-    }
+// ==============================================
+// Main Menu
+// By Zheng Yang, Hayden Soh
+// ==============================================
+static void DisplayMenu()
+{
+    Console.WriteLine("==== Gruberoo Food Delivery System ====");
+    Console.WriteLine("1. List all restaurants and menu items");
+    Console.WriteLine("2. List all orders");
+    Console.WriteLine("3. Create a new order");
+    Console.WriteLine("4. Process an order");
+    Console.WriteLine("5. Modify an existing order");
+    Console.WriteLine("6. Delete an existing order");
+    Console.WriteLine("0. Exit");
+}
 
     // ==============================================
     // Basic Feature 1 
@@ -241,4 +245,5 @@ class Program
     // ==============================================
 
 }
+
 
